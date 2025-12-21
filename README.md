@@ -175,9 +175,3 @@ LangSmith provides:
 pip install -r requirements.txt
 streamlit run app/main.py
 ```
-
----
-
-## Resume-Ready Summary
-
-Production-grade customer support AI using LangGraph, RAG, LangSmith observability, hallucination guardrails, and confidence-based escalation.
