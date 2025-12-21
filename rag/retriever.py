@@ -1,11 +1,11 @@
 import streamlit as st
-from langchain_community.vectorstores import Chroma
-from langchain_community.embeddings import HuggingFaceBgeEmbeddings
+from langchain_chroma import Chroma
+from langchain_huggingface import HuggingFaceEmbeddings
 from config import CHROMA_DIR
 
 @st.cache_resource(show_spinner="Loading embeddings & vector store...")
 def load_retriever():
-    embeddings = HuggingFaceBgeEmbeddings(
+    embeddings = HuggingFaceEmbeddings(
         model_name="sentence-transformers/all-MiniLM-L6-v2"
     )
 
@@ -17,3 +17,4 @@ def load_retriever():
     return vectorstore.as_retriever(search_kwargs = {"k": 4})
 
 retriever = load_retriever()
+
