@@ -14,9 +14,10 @@ run_name = "CustomerSupportLangGraph"
 
 LLM = ChatGroq(
     model = model,
-    api_key = st.secrets["GROQ_API_KEY"]
+    api_key = st.secrets["GROQ_API_KEY"],
     temperature= 0.2
 
 )
+
 
 
