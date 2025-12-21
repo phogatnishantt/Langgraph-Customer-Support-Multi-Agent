@@ -10,6 +10,7 @@ libmagic
 sentence-transformers
 python-dotenv
 chromadb
-from langchain_chroma import Chroma
-from langchain_huggingface import HuggingFaceEmbeddings
+langchain_chroma
+langchain_huggingface
 langsmith
+
