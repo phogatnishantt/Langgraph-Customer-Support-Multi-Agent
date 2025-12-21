@@ -27,17 +27,17 @@ def confidence_agent(state):
 
 
     ## Tone Control
-    if score < 0.75:
+    if score < 0.65:
         state["answer"] = (
             "Based on our documentation, here's what I can share:\n\n"
             + state["answer"]
             + "\n\nIf this dosen't resolve your issue, I can escalate it."
         )
 
-    if score > 0.75:
+    if score > 0.65:
         action = "answer"
     
-    if score < 0.6:
+    if score < 0.4:
         action = "escalate"
     else:
         action = "clarify"
@@ -46,3 +46,4 @@ def confidence_agent(state):
         "answer_confidence": score,
         "action": action
     }
+
