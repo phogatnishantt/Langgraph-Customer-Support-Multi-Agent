@@ -9,7 +9,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CHROMA_DIR = "chroma_db"
 
 
-model = "llama-3.1-8b-instant"
+model = "openai/gpt-oss-20b"
 run_name = "CustomerSupportLangGraph"
 
 LLM = ChatGroq(
@@ -18,6 +18,7 @@ LLM = ChatGroq(
     temperature= 0.2
 
 )
+
 
 
 
