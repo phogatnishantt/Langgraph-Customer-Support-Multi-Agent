@@ -6,7 +6,7 @@ import streamlit as st
 load_dotenv()
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CHROMA_DIR = os.path.join(BASE_DIR, "chroma_db")
+CHROMA_DIR = "chroma_db"
 
 
 model = "llama-3.1-8b-instant"
@@ -18,6 +18,7 @@ LLM = ChatGroq(
     temperature= 0.2
 
 )
+
 
 
 
