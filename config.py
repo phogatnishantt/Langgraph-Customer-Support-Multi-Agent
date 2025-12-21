@@ -12,8 +12,9 @@ model = "llama-3.1-8b-instant"
 run_name = "CustomerSupportLangGraph"
 
 LLM = ChatGroq(
-    model = model,,
+    model = model,
     api_key = st.secrets["GROQ_API_KEY"]
     temperature= 0.2
 
 )
+
