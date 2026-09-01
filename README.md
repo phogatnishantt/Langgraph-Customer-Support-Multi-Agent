@@ -392,7 +392,6 @@ Admins can additionally:
 
 ## 🔐 Login
 
-<!-- Add screenshot here -->
 
 ![Login Screenshot](./screenshots/login.png)
 
