@@ -392,44 +392,37 @@ Admins can additionally:
 
 ## 🔐 Login
 
-
-![Login Screenshot](./screenshots/login.png)
+![Login](./screenshots/01-login.png)
 
 ---
 
 ## 💬 AI Support Chat
 
-<!-- Add screenshot here -->
-
-![Support Chat Screenshot](./screenshots/chat.png)
+![AI Support Chat](./screenshots/02-chat-overview.png)
 
 ---
 
-## 🎫 Ticket Management
+## 📦 AI Order Retrieval
 
-<!-- Add screenshot here -->
+![AI Order Retrieval](./screenshots/03-chat-orders.png)
 
-![Tickets Screenshot](./screenshots/tickets.png)
+---
+
+## 🛒 Orders Dashboard
+
+![Orders Dashboard](./screenshots/04-orders.png)
+
+---
+
+## 👥 Customers Dashboard
+
+![Customers Dashboard](./screenshots/05-customers.png)
 
 ---
 
 ## 📊 Analytics Dashboard
 
-<!-- Add screenshot here -->
-
-![Analytics Screenshot](./screenshots/analytics.png)
-
----
-
-## 👤 Customer Portal
-
-<!-- Add screenshot here -->
-
-![Customer Portal Screenshot](./screenshots/customer-portal.png)
-
-> Create a `screenshots/` folder in the repository and place your images there.
-
----
+![Analytics Dashboard](./screenshots/06-analytics.png)
 
 # 🧪 Example Queries
 
