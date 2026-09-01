@@ -1,0 +1,787 @@
+.analytics-page {
+min-height: 100%;
+padding: 30px;
+overflow-y: auto;
+
+background:
+radial-gradient(
+circle at 80% 4%,
+rgba(183, 168, 255, 0.16),
+transparent 28%
+);
+}
+
+/* ============================================================
+Header
+============================================================ */
+
+.analytics-header {
+display: flex;
+align-items: flex-end;
+justify-content: space-between;
+
+gap: 20px;
+}
+
+.analytics-header h1 {
+margin: 0;
+
+color: #312c45;
+
+font-size: 30px;
+line-height: 1.15;
+
+letter-spacing: -0.035em;
+}
+
+.analytics-description {
+margin: 8px 0 0;
+
+color: #77718b;
+
+font-size: 13px;
+
+line-height: 1.55;
+}
+
+.analytics-live {
+display: flex;
+align-items: center;
+
+gap: 7px;
+
+padding: 8px 11px;
+
+border:
+1px solid
+rgba(85, 183, 125, 0.16);
+
+border-radius: 9px;
+
+background:
+rgba(255, 255, 255, 0.67);
+
+backdrop-filter: blur(14px);
+-webkit-backdrop-filter: blur(14px);
+
+color: #4c9d6d;
+
+font-size: 10px;
+font-weight: 650;
+
+box-shadow:
+0 6px 18px
+rgba(85, 183, 125, 0.05);
+}
+
+.analytics-live-dot {
+width: 6px;
+height: 6px;
+
+border-radius: 50%;
+
+background:
+var(--success);
+
+box-shadow:
+0 0 7px
+rgba(85, 183, 125, 0.24);
+}
+
+/* ============================================================
+KPI cards
+============================================================ */
+
+.analytics-kpis {
+margin-top: 24px;
+
+display: grid;
+
+grid-template-columns:
+repeat(4, minmax(0, 1fr));
+
+gap: 12px;
+}
+
+.analytics-card {
+border:
+1px solid
+rgba(129, 114, 238, 0.11);
+
+border-radius: 15px;
+
+background:
+rgba(255, 255, 255, 0.68);
+
+backdrop-filter: blur(18px);
+-webkit-backdrop-filter: blur(18px);
+
+box-shadow:
+var(--shadow-card);
+
+transition:
+transform 0.18s ease,
+box-shadow 0.18s ease,
+border-color 0.18s ease;
+}
+
+.analytics-card:hover {
+transform:
+translateY(-1px);
+
+border-color:
+rgba(129, 114, 238, 0.16);
+
+box-shadow:
+0 16px 38px
+rgba(91, 77, 143, 0.085);
+}
+
+.stat-card {
+min-height: 112px;
+
+padding: 17px;
+
+display: flex;
+align-items: center;
+
+gap: 13px;
+}
+
+.stat-icon {
+width: 42px;
+height: 42px;
+
+flex-shrink: 0;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+border-radius: 12px;
+
+background:
+linear-gradient(
+145deg,
+rgba(237, 234, 253, 0.95),
+rgba(255, 255, 255, 0.82)
+);
+
+border:
+1px solid
+rgba(129, 114, 238, 0.12);
+
+color:
+#776dc7;
+
+box-shadow:
+0 6px 16px
+rgba(129, 114, 238, 0.065);
+}
+
+.stat-content span {
+display: block;
+
+color: #817b91;
+
+font-size: 10px;
+font-weight: 500;
+}
+
+.stat-content strong {
+display: block;
+
+margin-top: 4px;
+
+color: #363149;
+
+font-size: 24px;
+
+line-height: 1;
+}
+
+.stat-content small {
+display: block;
+
+margin-top: 7px;
+
+color: #9a95a7;
+
+font-size: 9px;
+}
+
+/* ============================================================
+Performance
+============================================================ */
+
+.analytics-performance {
+margin-top: 12px;
+
+display: grid;
+
+grid-template-columns:
+repeat(4, minmax(0, 1fr));
+
+gap: 12px;
+}
+
+.metric-card {
+padding: 16px;
+}
+
+.metric-top {
+display: flex;
+align-items: center;
+
+gap: 8px;
+
+color: #777187;
+
+font-size: 10px;
+font-weight: 550;
+}
+
+.metric-icon {
+width: 30px;
+height: 30px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+border-radius: 9px;
+
+background:
+rgba(239, 236, 255, 0.8);
+
+border:
+1px solid
+rgba(129, 114, 238, 0.1);
+
+color: #7c72c6;
+}
+
+.metric-card > strong {
+display: block;
+
+margin-top: 13px;
+
+color: #363149;
+
+font-size: 21px;
+
+line-height: 1.05;
+}
+
+.metric-card > small {
+display: block;
+
+margin-top: 5px;
+
+color: #9791a4;
+
+font-size: 9px;
+}
+
+/* ============================================================
+Chart grid
+============================================================ */
+
+.analytics-grid {
+margin-top: 12px;
+
+display: grid;
+
+grid-template-columns:
+repeat(2, minmax(0, 1fr));
+
+gap: 12px;
+}
+
+.chart-card {
+min-height: 270px;
+
+padding: 18px;
+}
+
+.chart-header {
+display: flex;
+
+align-items: flex-start;
+justify-content: space-between;
+}
+
+.chart-title {
+display: flex;
+align-items: center;
+
+gap: 10px;
+}
+
+.chart-icon {
+width: 32px;
+height: 32px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+border-radius: 9px;
+
+background:
+rgba(239, 236, 255, 0.82);
+
+border:
+1px solid
+rgba(129, 114, 238, 0.1);
+
+color: #7b71c1;
+}
+
+.chart-title h3 {
+margin: 0;
+
+color: #47415a;
+
+font-size: 14px;
+font-weight: 700;
+}
+
+.chart-title span {
+display: block;
+
+margin-top: 4px;
+
+color: #938da1;
+
+font-size: 9px;
+}
+
+.chart-body {
+margin-top: 24px;
+}
+
+/* ============================================================
+Bars
+============================================================ */
+
+.bar-list {
+display: flex;
+flex-direction: column;
+
+gap: 16px;
+}
+
+.bar-row {
+display: grid;
+
+grid-template-columns:
+105px
+minmax(0, 1fr)
+48px;
+
+align-items: center;
+
+gap: 10px;
+}
+
+.bar-label {
+display: flex;
+
+align-items: center;
+justify-content: space-between;
+
+gap: 6px;
+
+color: #706a80;
+
+font-size: 10px;
+}
+
+.bar-label strong {
+color: #514b61;
+
+font-size: 10px;
+}
+
+.bar-track {
+height: 7px;
+
+overflow: hidden;
+
+border-radius: 999px;
+
+background:
+rgba(129, 114, 238, 0.075);
+}
+
+.bar-fill {
+height: 100%;
+
+border-radius: inherit;
+
+background:
+linear-gradient(
+90deg,
+rgba(129, 114, 238, 0.72),
+rgba(164, 151, 245, 0.58)
+);
+
+transition:
+width 0.35s ease;
+}
+
+.bar-percentage {
+color: #8d879a;
+
+font-size: 9px;
+
+text-align: right;
+}
+
+/* ============================================================
+Customer activity
+============================================================ */
+
+.customer-status-grid {
+display: grid;
+
+grid-template-columns:
+1fr
+1fr;
+
+gap: 9px;
+}
+
+.customer-stat {
+padding: 13px;
+
+display: flex;
+align-items: center;
+
+gap: 10px;
+
+border:
+1px solid
+rgba(129, 114, 238, 0.085);
+
+border-radius: 11px;
+
+background:
+rgba(255, 255, 255, 0.58);
+
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
+}
+
+.customer-stat-icon {
+width: 30px;
+height: 30px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+border-radius: 9px;
+
+background:
+rgba(239, 236, 255, 0.78);
+
+color: #7b72bf;
+}
+
+.customer-stat span {
+display: block;
+
+color: #858095;
+
+font-size: 9px;
+}
+
+.customer-stat strong {
+display: block;
+
+margin-top: 3px;
+
+color: #474159;
+
+font-size: 15px;
+}
+
+.customer-ratio {
+margin-top: 19px;
+
+height: 8px;
+
+overflow: hidden;
+
+border-radius: 999px;
+
+background:
+rgba(129, 114, 238, 0.08);
+}
+
+.customer-ratio-fill {
+height: 100%;
+
+border-radius: inherit;
+
+background:
+linear-gradient(
+90deg,
+rgba(85, 183, 125, 0.62),
+rgba(123, 202, 152, 0.48)
+);
+}
+
+.customer-ratio-label {
+margin-top: 8px;
+
+display: flex;
+
+align-items: center;
+justify-content: space-between;
+
+color: #918a9d;
+
+font-size: 9px;
+}
+
+.customer-ratio-label strong {
+color: #615a73;
+
+font-size: 10px;
+}
+
+/* ============================================================
+Support summary
+============================================================ */
+
+.support-summary {
+margin-top: 12px;
+
+padding: 19px;
+
+display: flex;
+
+align-items: center;
+justify-content: space-between;
+
+gap: 20px;
+
+border:
+1px solid
+rgba(129, 114, 238, 0.11);
+
+border-radius: 15px;
+
+background:
+rgba(255, 255, 255, 0.67);
+
+backdrop-filter: blur(18px);
+-webkit-backdrop-filter: blur(18px);
+
+box-shadow:
+var(--shadow-card);
+}
+
+.support-summary h2 {
+margin: 0;
+
+color: #3f394f;
+
+font-size: 15px;
+
+font-weight: 700;
+}
+
+.support-summary-items {
+display: flex;
+
+gap: 9px;
+}
+
+.summary-item {
+min-width: 82px;
+
+padding: 10px 12px;
+
+border:
+1px solid
+rgba(129, 114, 238, 0.085);
+
+border-radius: 9px;
+
+background:
+rgba(255, 255, 255, 0.58);
+
+text-align: center;
+}
+
+.summary-item span {
+display: block;
+
+color: #858094;
+
+font-size: 9px;
+}
+
+.summary-item strong {
+display: block;
+
+margin-top: 4px;
+
+color: #4a445b;
+
+font-size: 14px;
+}
+
+/* ============================================================
+Loading
+============================================================ */
+
+.analytics-loading {
+min-height: 400px;
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+gap: 10px;
+
+color: #817b91;
+
+font-size: 11px;
+}
+
+.analytics-spinner {
+width: 16px;
+height: 16px;
+
+border:
+2px solid
+rgba(129, 114, 238, 0.14);
+
+border-top-color:
+#8172ee;
+
+border-radius: 50%;
+
+animation:
+analytics-spin
+0.8s linear infinite;
+}
+
+@keyframes analytics-spin {
+to {
+transform:
+rotate(360deg);
+}
+}
+
+/* ============================================================
+Error
+============================================================ */
+
+.analytics-error {
+margin-top: 30px;
+
+padding: 17px;
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+gap: 8px;
+
+border:
+1px solid
+rgba(213, 116, 131, 0.14);
+
+border-radius: 11px;
+
+background:
+rgba(255, 255, 255, 0.64);
+
+color: #b86a77;
+
+font-size: 10px;
+
+box-shadow:
+0 8px 25px
+rgba(91, 77, 143, 0.04);
+}
+
+/* ============================================================
+Responsive
+============================================================ */
+
+@media (max-width: 1100px) {
+.analytics-kpis,
+.analytics-performance {
+grid-template-columns:
+repeat(2, minmax(0, 1fr));
+}
+
+.analytics-grid {
+grid-template-columns:
+1fr;
+}
+}
+
+@media (max-width: 750px) {
+.analytics-page {
+padding: 20px;
+}
+
+.analytics-header {
+align-items: flex-start;
+
+flex-direction: column;
+
+}
+
+.analytics-kpis,
+.analytics-performance {
+grid-template-columns:
+1fr;
+}
+
+.support-summary {
+align-items: flex-start;
+
+flex-direction: column;
+
+}
+
+.support-summary-items {
+width: 100%;
+
+flex-wrap: wrap;
+
+}
+}
+
+@media (max-width: 520px) {
+.analytics-header h1 {
+font-size: 26px;
+}
+
+.analytics-description {
+font-size: 12px;
+}
+
+.customer-status-grid {
+grid-template-columns:
+1fr;
+}
+
+.bar-row {
+grid-template-columns:
+90px
+minmax(0, 1fr)
+42px;
+}
+}
