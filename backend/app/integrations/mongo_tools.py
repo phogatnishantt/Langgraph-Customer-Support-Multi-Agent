@@ -1,6 +1,6 @@
 from datetime import datetime
-from langchain_core.tools import tool
 
+from langchain_core.tools import tool
 
 from backend.app.core.database import (
     customers_collection,
@@ -14,12 +14,18 @@ def get_customer(customer_id: str):
     """Get a customer profile using their customer ID."""
 
     customer = customers_collection.find_one(
-        {"customer_id": customer_id},
-        {"_id": 0}
+        {
+            "customer_id": customer_id
+        },
+        {
+            "_id": 0
+        },
     )
 
     if not customer:
-        return {"error": "Customer not found"}
+        return {
+            "error": "Customer not found"
+        }
 
     return customer
 
@@ -29,12 +35,18 @@ def get_order(order_number: str):
     """Get an order using its order number."""
 
     order = orders_collection.find_one(
-        {"order_number": order_number},
-        {"_id": 0}
+        {
+            "order_number": order_number
+        },
+        {
+            "_id": 0
+        },
     )
 
     if not order:
-        return {"error": "Order not found"}
+        return {
+            "error": "Order not found"
+        }
 
     return order
 
@@ -44,8 +56,12 @@ def get_customer_orders(customer_id: str):
     """Get all orders belonging to a customer."""
 
     orders = orders_collection.find(
-        {"customer_id": customer_id},
-        {"_id": 0}
+        {
+            "customer_id": customer_id
+        },
+        {
+            "_id": 0
+        },
     )
 
     return list(orders)
@@ -56,12 +72,18 @@ def get_ticket(ticket_id: str):
     """Get a support ticket using its ticket ID."""
 
     ticket = tickets_collection.find_one(
-        {"ticket_id": ticket_id},
-        {"_id": 0}
+        {
+            "ticket_id": ticket_id
+        },
+        {
+            "_id": 0
+        },
     )
 
     if not ticket:
-        return {"error": "Ticket not found"}
+        return {
+            "error": "Ticket not found"
+        }
 
     return ticket
 
@@ -71,11 +93,16 @@ def get_customer_tickets(customer_id: str):
     """Get all support tickets belonging to a customer."""
 
     tickets = tickets_collection.find(
-        {"customer_id": customer_id},
-        {"_id": 0}
+        {
+            "customer_id": customer_id
+        },
+        {
+            "_id": 0
+        },
     )
 
     return list(tickets)
+
 
 @tool
 def create_ticket(
@@ -87,9 +114,13 @@ def create_ticket(
 ):
     """Create a new support ticket for a customer."""
 
-    existing_tickets = tickets_collection.count_documents({})
+    existing_tickets = (
+        tickets_collection.count_documents({})
+    )
 
-    ticket_id = f"TKT-{10000 + existing_tickets}"
+    ticket_id = (
+        f"TKT-{10000 + existing_tickets}"
+    )
 
     ticket = {
         "ticket_id": ticket_id,
@@ -103,8 +134,13 @@ def create_ticket(
         "created_at": datetime.now().isoformat(),
     }
 
-    tickets_collection.insert_one(ticket)
+    tickets_collection.insert_one(
+        ticket
+    )
 
-    ticket.pop("_id", None)
+    ticket.pop(
+        "_id",
+        None,
+    )
 
     return ticket

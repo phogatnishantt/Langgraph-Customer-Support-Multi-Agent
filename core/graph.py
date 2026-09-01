@@ -1,6 +1,9 @@
 from time import perf_counter
 
-from langgraph.graph import StateGraph, END
+from langgraph.graph import (
+    StateGraph,
+    END,
+)
 
 from core.state import SupportState
 
@@ -33,7 +36,10 @@ def tracked_agent(
         started_at = perf_counter()
 
         try:
-            result = agent_function(state)
+
+            result = agent_function(
+                state
+            )
 
             updated_state = {
                 **state,
@@ -72,7 +78,9 @@ def route_after_intent(state):
 
     mongo_intents = {
         "order_status",
+        "customer_orders",
         "ticket_status",
+        "customer_tickets",
         "customer_info",
     }
 
@@ -88,6 +96,7 @@ def build_graph():
         SupportState
     )
 
+
     graph.add_node(
         "intent",
         tracked_agent(
@@ -95,6 +104,7 @@ def build_graph():
             intent_agent,
         ),
     )
+
 
     graph.add_node(
         "rag",
@@ -104,6 +114,7 @@ def build_graph():
         ),
     )
 
+
     graph.add_node(
         "mongo",
         tracked_agent(
@@ -111,6 +122,7 @@ def build_graph():
             mongo_agent,
         ),
     )
+
 
     graph.add_node(
         "confidence",
@@ -120,6 +132,7 @@ def build_graph():
         ),
     )
 
+
     graph.add_node(
         "clarify",
         tracked_agent(
@@ -127,6 +140,7 @@ def build_graph():
             clarification_agent,
         ),
     )
+
 
     graph.add_node(
         "escalate",
@@ -136,9 +150,11 @@ def build_graph():
         ),
     )
 
+
     graph.set_entry_point(
         "intent"
     )
+
 
     graph.add_conditional_edges(
         "intent",
@@ -149,15 +165,18 @@ def build_graph():
         },
     )
 
+
     graph.add_edge(
         "rag",
         "confidence",
     )
 
+
     graph.add_edge(
         "mongo",
         "confidence",
     )
+
 
     graph.add_conditional_edges(
         "confidence",
@@ -168,5 +187,6 @@ def build_graph():
             "escalate": "escalate",
         },
     )
+
 
     return graph.compile()
